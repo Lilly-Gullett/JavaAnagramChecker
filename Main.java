@@ -32,11 +32,15 @@ class Main {
     String alphabeticalInputA = AlphabetizeInput(inputB.toLowerCase());
     String alphabeticalInputB = AlphabetizeInput(inputA.toLowerCase());
     System.out.println();
-    Boolean match =CheckForMatch(alphabeticalInputA, alphabeticalInputB);
-    if (match == true) {
-      System.out.println("\'"+ inputA +"\' is an anagram for \'"+ inputB +"\'.");
+    if (alphabeticalInputA.equals("") || alphabeticalInputB.equals("")) {
+      System.out.println("At least one of your phrases contianed no alphabetical characters.\nThis tool is only able to check for anagrams using characters from the English alphabet.");
     } else {
-      System.out.println("\'"+ inputA +"\' is not an anagram for \'"+ inputB +"\'.");
+      Boolean match =CheckForMatch(alphabeticalInputA, alphabeticalInputB);
+      if (match == true) {
+        System.out.println("\'"+ inputA +"\' is an anagram for \'"+ inputB +"\'.");
+      } else {
+        System.out.println("\'"+ inputA +"\' is not an anagram for \'"+ inputB +"\'.");
+      }
     }
   }
 }
