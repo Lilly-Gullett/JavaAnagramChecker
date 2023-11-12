@@ -24,10 +24,19 @@ class Main {
   }
   
   public static void main(String[] args) {
-    String inputA = "tom marvolo riddle";
-    String inputB = "i am lord voldemort";
-    String alphabeticalInputA = AlphabetizeInput(inputB);
-    String alphabeticalInputB = AlphabetizeInput(inputA);
-    System.out.println(CheckForMatch(alphabeticalInputA, alphabeticalInputB));
+    Scanner input = new Scanner(System.in);
+    System.out.println("\nPlease enter your first word or phrase.\nHit enter when you are done");
+    String inputA = input.nextLine();
+    System.out.println("\nPlease enter your second word or phrase.\nHit enter when you are done");
+    String inputB = input.nextLine();
+    String alphabeticalInputA = AlphabetizeInput(inputB.toLowerCase());
+    String alphabeticalInputB = AlphabetizeInput(inputA.toLowerCase());
+    System.out.println();
+    Boolean match =CheckForMatch(alphabeticalInputA, alphabeticalInputB);
+    if (match == true) {
+      System.out.println("\'"+ inputA +"\' is an anagram for \'"+ inputB +"\'.");
+    } else {
+      System.out.println("\'"+ inputA +"\' is not an anagram for \'"+ inputB +"\'.");
+    }
   }
 }
