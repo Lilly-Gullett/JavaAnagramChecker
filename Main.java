@@ -19,7 +19,15 @@ class Main {
     return sortedString;
   }
   
+  static Boolean CheckForMatch(String inputA, String inputB) {
+    return inputA.equals(inputB);
+  }
+  
   public static void main(String[] args) {
-    System.out.println(AlphabetizeInput("Tom Marvolo Riddle"));
+    String inputA = "tom marvolo riddle";
+    String inputB = "i am lord voldemort";
+    String alphabeticalInputA = AlphabetizeInput(inputB);
+    String alphabeticalInputB = AlphabetizeInput(inputA);
+    System.out.println(CheckForMatch(alphabeticalInputA, alphabeticalInputB));
   }
 }
