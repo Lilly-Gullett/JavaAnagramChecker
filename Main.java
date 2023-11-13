@@ -41,6 +41,7 @@ class Main {
   }
   
   public static void main(String[] args) {
+    System.out.println("This program was coded with Java by Lilly Gullett for the Introduction to Java Programming course by Sophia.\nThis program takes 2 English words or phrases and determines if one is an anagram for the other.\nI hope you enjoy!");
     Scanner input = new Scanner(System.in);
     String rerunValue = "";
     while (!rerunValue.equals("N")) {
