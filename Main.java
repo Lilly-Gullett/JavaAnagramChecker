@@ -23,6 +23,23 @@ class Main {
     return inputA.equals(inputB);
   }
   
+  static String Rerun() {
+    Scanner input = new Scanner(System.in);
+    String rerunValue ="";
+    while (!rerunValue.equals("Y") && !rerunValue.equals("N")) {
+      System.out.println("\nWould you like to test a new set? (Y/N)");
+      rerunValue = input.nextLine().toUpperCase();
+      if (rerunValue.equals("Y")) {
+        System.out.println("Wonderful! I will restart the program for you");
+      } else if (rerunValue.equals("N")) {
+        System.out.println("Thank you for using this program. Goodbye!");
+      } else {
+        System.out.println("I'm sorry, I need a Y or N response.");
+      }
+    }
+    return rerunValue;
+  }
+  
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     System.out.println("\nPlease enter your first word or phrase.\nHit enter when you are done");
@@ -42,5 +59,6 @@ class Main {
         System.out.println("\'"+ inputA +"\' is not an anagram for \'"+ inputB +"\'.");
       }
     }
+    String rerunValue = Rerun();
   }
 }
