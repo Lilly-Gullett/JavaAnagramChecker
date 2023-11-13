@@ -30,7 +30,7 @@ class Main {
       System.out.println("\nWould you like to test a new set? (Y/N)");
       rerunValue = input.nextLine().toUpperCase();
       if (rerunValue.equals("Y")) {
-        System.out.println("Wonderful! I will restart the program for you");
+        System.out.println("Wonderful! I will restart the program for you./n");
       } else if (rerunValue.equals("N")) {
         System.out.println("Thank you for using this program. Goodbye!");
       } else {
@@ -42,23 +42,26 @@ class Main {
   
   public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
-    System.out.println("\nPlease enter your first word or phrase.\nHit enter when you are done");
-    String inputA = input.nextLine();
-    System.out.println("\nPlease enter your second word or phrase.\nHit enter when you are done");
-    String inputB = input.nextLine();
-    String alphabeticalInputA = AlphabetizeInput(inputB.toLowerCase());
-    String alphabeticalInputB = AlphabetizeInput(inputA.toLowerCase());
-    System.out.println();
-    if (alphabeticalInputA.equals("") || alphabeticalInputB.equals("")) {
-      System.out.println("At least one of your phrases contianed no alphabetical characters.\nThis tool is only able to check for anagrams using characters from the English alphabet.");
-    } else {
-      Boolean match =CheckForMatch(alphabeticalInputA, alphabeticalInputB);
-      if (match == true) {
-        System.out.println("\'"+ inputA +"\' is an anagram for \'"+ inputB +"\'.");
+    String rerunValue = "";
+    while (!rerunValue.equals("N")) {
+      System.out.println("\nPlease enter your first word or phrase.\nHit enter when you are done");
+      String inputA = input.nextLine();
+      System.out.println("\nPlease enter your second word or phrase.\nHit enter when you are done");
+      String inputB = input.nextLine();
+      String alphabeticalInputA = AlphabetizeInput(inputB.toLowerCase());
+      String alphabeticalInputB = AlphabetizeInput(inputA.toLowerCase());
+      System.out.println();
+      if (alphabeticalInputA.equals("") || alphabeticalInputB.equals("")) {
+        System.out.println("At least one of your phrases contianed no alphabetical characters.\nThis tool is only able to check for anagrams using characters from the English alphabet.");
       } else {
-        System.out.println("\'"+ inputA +"\' is not an anagram for \'"+ inputB +"\'.");
+        Boolean match =CheckForMatch(alphabeticalInputA, alphabeticalInputB);
+        if (match == true) {
+          System.out.println("\'"+ inputA +"\' is an anagram for \'"+ inputB +"\'.");
+        } else {
+          System.out.println("\'"+ inputA +"\' is not an anagram for \'"+ inputB +"\'.");
+        }
       }
+      rerunValue = Rerun();
     }
-    String rerunValue = Rerun();
   }
 }
